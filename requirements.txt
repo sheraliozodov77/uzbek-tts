@@ -1,0 +1,45 @@
+# Core TTS Framework
+TTS>=0.22.0
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Data Processing
+librosa>=0.10.0
+soundfile>=0.12.0
+phonemizer>=3.2.0
+# espeak-ng>=1.50  # Not available on Windows - using fallback phonemization
+
+# ML Experiment Tracking
+mlflow>=2.8.0
+wandb>=0.16.0
+
+# Text Processing
+cyrtranslit>=1.1.1
+unidecode>=1.3.0
+regex>=2023.0.0
+
+# Audio Processing
+pydub>=0.25.0
+scipy>=1.11.0
+numpy>=1.24.0
+
+# Evaluation Metrics
+pesq>=0.0.4
+pystoi>=0.3.3
+torchmetrics>=1.2.0
+
+# Utilities
+tqdm>=4.66.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Development
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+black>=23.0.0
+flake8>=6.0.0
+pesq>=0.0.4
+pystoi>=0.3.3
+torchmetrics>=1.2.0
