@@ -47,8 +47,8 @@ venv.bak/
 *.ckpt
 
 # MLflow
-# mlruns/
-# mlartifacts/
+mlruns/
+mlartifacts/
 
 # WandB
 wandb/
