@@ -20,12 +20,6 @@ except ImportError:
     PHONEMIZER_AVAILABLE = False
     print("Warning: phonemizer not available. Install with: pip install phonemizer")
 
-try:
-    import cyrtranslit
-    CYRTRANSLIT_AVAILABLE = True
-except ImportError:
-    CYRTRANSLIT_AVAILABLE = False
-    print("Warning: cyrtranslit not available. Install with: pip install cyrtranslit")
 
 try:
     import unidecode
@@ -112,17 +106,6 @@ class UzbekTextProcessor:
         
         return text
     
-    def convert_cyrillic_to_latin(self, text: str) -> str:
-        """Convert Cyrillic text to Latin script."""
-        if not CYRTRANSLIT_AVAILABLE:
-            logger.warning("cyrtranslit not available, skipping Cyrillic conversion")
-            return text
-        
-        try:
-            return cyrtranslit.to_latin(text)
-        except Exception as e:
-            logger.warning(f"Failed to convert Cyrillic: {e}")
-            return text
     
     def phonemize_text(self, text: str) -> str:
         """Convert text to phonemes."""
@@ -256,11 +239,8 @@ class DatasetPreprocessor:
             # Clean text
             cleaned_text = self.text_processor.clean_text(text)
             
-            # Convert Cyrillic to Latin if needed (skip if cyrtranslit not available)
-            if CYRTRANSLIT_AVAILABLE:
-                latin_text = self.text_processor.convert_cyrillic_to_latin(cleaned_text)
-            else:
-                latin_text = cleaned_text  # Use cleaned text as-is
+            # Use cleaned text as-is (Latin Uzbek only)
+            latin_text = cleaned_text
             
             # Phonemize
             phonemes = self.text_processor.phonemize_text(latin_text)
@@ -401,11 +381,8 @@ class DatasetPreprocessor:
             # Clean text only
             cleaned_text = self.text_processor.clean_text(text)
             
-            # Convert Cyrillic to Latin if needed (skip if cyrtranslit not available)
-            if CYRTRANSLIT_AVAILABLE:
-                latin_text = self.text_processor.convert_cyrillic_to_latin(cleaned_text)
-            else:
-                latin_text = cleaned_text  # Use cleaned text as-is
+            # Use cleaned text as-is (Latin Uzbek only)
+            latin_text = cleaned_text
             
             # Debug output
             if hasattr(self, 'debug') and self.debug and idx < 10:

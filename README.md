@@ -1,16 +1,16 @@
-# Uzbek TTS - High-Quality Text-to-Speech for Uzbek Language
+# Uzbek TTS - Text-to-Speech for Uzbek Language
 
 A production-ready Uzbek Text-to-Speech system built with VITS architecture, trained on Common Voice v17.0 dataset with 67+ hours of clean Uzbek audio. **Training completed successfully with excellent performance metrics and real-time inference capability.**
 
 ## Project Overview
 
-This project implements a state-of-the-art TTS system for the Uzbek language. The system is optimized for RTX 4090 GPU with memory-efficient training and designed for commercial use with high-quality output and low latency.
+This project implements a state-of-the-art TTS system for the Uzbek language. The system is optimized for RTX 4090 GPU with memory-efficient training and designed for commercial use with output and low latency.
 
 ### Key Features
 
-- ✅ **VITS Architecture**: End-to-end neural TTS with high-quality vocoding
+- ✅ **VITS Architecture**: End-to-end neural TTS with vocoding
 - ✅ **RTX 4090 Optimized**: Memory-optimized training (23.4/24GB VRAM usage)
-- ✅ **Script Support**: Handles both Latin and Cyrillic Uzbek text
+- ✅ **Script Support**: Latin Uzbek text
 - ✅ **Experiment Tracking**: Integrated MLflow and WandB logging
 - ✅ **Mixed Precision Training**: FP16 enabled for faster training
 - ✅ **Production Ready**: Comprehensive evaluation and deployment ready
@@ -23,7 +23,7 @@ This project implements a state-of-the-art TTS system for the Uzbek language. Th
 - **Source**: Mozilla Common Voice v17.0 Uzbek portion
 - **Duration**: 67.93 hours of audio
 - **Samples**: 57,718 audio-text pairs
-- **Quality**: Human-validated, high-quality recordings
+- **Quality**: Human-validated recordings
 - **License**: CC0 (commercial use allowed)
 
 ### Preprocessing Results
@@ -51,7 +51,7 @@ Text Preprocessing & Character Tokenization
     ↓
 VITS Model (Encoder + Decoder + HiFi-GAN Vocoder)
     ↓
-High-Quality Audio Output (22.05kHz)
+Audio Output (22.05kHz)
 ```
 
 
@@ -75,6 +75,22 @@ pip install -r requirements.txt
 ```
 
 ### 2. Using the Trained Model
+
+**Option A: Interactive Web Interface (Recommended for Portfolio)**
+
+```bash
+# Launch the beautiful Gradio web interface
+python gradio_app.py
+
+# The interface will open in your browser at http://localhost:7860
+# Features:
+# - Interactive text input for Uzbek text (Latin)
+# - Real-time audio generation with performance metrics
+# - Example sentences for quick testing
+# - Beautiful, professional UI perfect for showcasing
+```
+
+**Option B: Command Line Testing**
 
 ```bash
 # Test the trained model with sample sentences
@@ -113,7 +129,7 @@ python src/data_preprocessing.py --data_dir ./data/processed --output_dir ./data
 - **Audio Validation**: Quality checks for corrupted files
 
 **Text Preprocessing:**
-- **Script Normalization**: Convert Cyrillic to Latin (optional)
+- **Script Normalization**: Text cleaning and normalization
 - **Punctuation Handling**: Standardize punctuation marks
 - **Character Set**: Custom Uzbek character vocabulary
 - **Text Cleaning**: Remove special characters, normalize whitespace
@@ -166,12 +182,13 @@ uzbek-tts/
 ├── comprehensive_evaluation/     # Comprehensive evaluation samples (10 test sentences)
 ├── comprehensive_evaluation_report.json  # Detailed evaluation results with metrics
 ├── comprehensive_evaluation.py   # Comprehensive model evaluation script
+├── gradio_app.py                 # Beautiful Gradio web interface for TTS (portfolio showcase)
+├── test_best_model.py            # Quick test script for trained model
+├── start_training.py             # Main training script (RTX 4090 optimized)
 ├── scripts/                      # Additional scripts and documentation
 │   └── RTX4090_OPTIMIZATION_SUMMARY.md  # RTX 4090 optimization details
 ├── wandb/                        # WandB experiment tracking
 ├── config.yaml                   # RTX 4090 optimized configuration
-├── start_training.py            # Main training script (RTX 4090 optimized)
-├── test_best_model.py           # Model testing script
 ├── requirements.txt              # Python dependencies
 └── README.md                     # This file
 ```
@@ -283,7 +300,7 @@ The trained model was comprehensively evaluated on 20 diverse Uzbek sentences fr
 - **Training**: Completed successfully (25.45 hours)
 - **Evaluation**: Comprehensive testing completed with quality metrics
 - **Performance**: RTF 0.019 (53x faster than real-time)
-- **Quality**: High-quality natural Uzbek speech synthesis
+- **Quality**: Natural Uzbek speech synthesis
 - **Deployment**: Ready for production use
 
 ### Future Enhancements

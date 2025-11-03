@@ -83,6 +83,9 @@ Thumbs.db
 secrets.yaml
 api_keys.yaml
 
+# Gradio (certificates and generated files)
+.gradio/
+
 # Audio samples
 samples/
 test_audio/

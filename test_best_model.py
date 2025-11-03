@@ -47,8 +47,8 @@ def test_best_model():
         config = VitsConfig()
         config.load_json(str(config_path))
         
-        # Define character set (same as training)
-        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ОоҒғҚқЎўҲҳЁёАаКкëʙТµģ"
+        # Define character set (Latin Uzbek only)
+        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         punctuations = "!'(),-.:;? \"\nʻʼ"
         
         # Initialize model

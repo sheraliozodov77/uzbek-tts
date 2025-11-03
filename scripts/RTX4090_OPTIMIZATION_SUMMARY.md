@@ -112,7 +112,7 @@ python train_uzbek_tts.py --config config.yaml --data_dir ./data/preprocessed
 - **RTF (Real-Time Factor)**: 0.063 (16x faster than real-time) ✅
 - **Average Inference Time**: 0.293 seconds per sample
 - **Average Audio Duration**: 4.73 seconds
-- **Model Quality**: High-quality natural-sounding Uzbek speech
+- **Model Quality**: Natural-sounding Uzbek speech
 - **Status**: ✅ **PRODUCTION READY**
 
 ## Next Steps (COMPLETED)

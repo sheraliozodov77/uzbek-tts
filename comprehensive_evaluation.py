@@ -98,8 +98,8 @@ def load_trained_model(model_path, config_path):
         # Initialize audio processor
         ap = AudioProcessor(**config.audio)
         
-        # Setup tokenizer
-        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ОоҒғҚқЎўҲҳЁёАаКкëʙТµģ"
+        # Setup tokenizer (Latin Uzbek only)
+        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         punctuations = "!'(),-.:;? \"\nʻʼ"
         characters = IPAPhonemes(
             characters=uzbek_chars,

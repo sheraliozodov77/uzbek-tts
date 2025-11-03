@@ -49,8 +49,8 @@ def main():
         config = VitsConfig()
         config.load_json(str(config_path))
         
-        # Define character set first (Latin + essential Uzbek Cyrillic + missing characters)
-        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ОоҒғҚқЎўҲҳЁёАаКкëʙТµģ"
+        # Define character set first (Latin Uzbek only)
+        uzbek_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         punctuations = "!'(),-.:;? \"\nʻʼ"
         
         # RTX 4090 Memory-Optimized Configuration (23.4/24GB VRAM usage)
